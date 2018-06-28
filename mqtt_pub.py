@@ -16,4 +16,4 @@ client1.loop_start()
 while 1:
 	potVal = float(pot.read())
 	ret= client1.publish("topico/ejemplo_1",str(potVal)) 
-	time(1)                  
+	time.sleep(1)                  
