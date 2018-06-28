@@ -79,8 +79,8 @@ while (1) {
       printf("Failed to connect, return code %d\n", rc);
       exit(EXIT_FAILURE);
     }
-      scanf("%d", &valor);
-      sprintf(cadena, "%d", valor);
+      scanf("%s", &valor);
+      //sprintf(cadena, "%d", valor);
       pubmsg.payload = cadena;
       pubmsg.payloadlen = strlen(cadena);
       pubmsg.qos = QOS;
