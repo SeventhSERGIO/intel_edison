@@ -21,6 +21,7 @@ def on_message(client1, userdata, msg):
 	   gpio_1.write(1)
     elif str(msg.payload) == "OFF":
 	   gpio_1.write(0)    
+	
 	EdisonLCD.clear()
     EdisonLCD.setCursor(0,0)
     EdisonLCD.write(msg.payload)
