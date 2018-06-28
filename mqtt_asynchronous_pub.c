@@ -80,7 +80,7 @@ while (1) {
       exit(EXIT_FAILURE);
     }
       scanf("%c", &cadena);
-      //sprintf(cadena, "%d", valor);
+      sprintf(cadena, "%c", cadena);
       pubmsg.payload = cadena;
       pubmsg.payloadlen = strlen(cadena);
       pubmsg.qos = QOS;
