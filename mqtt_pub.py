@@ -1,5 +1,5 @@
 import paho.mqtt.client as paho
-broker="192.168.1.130"
+broker="192.168.1.108"
 port=1883
 # Create function for callback
 def on_publish(client,userdata,result):             
@@ -12,4 +12,8 @@ client1.on_publish = on_publish
 # Establish connection                        
 client1.connect(broker,port)                                 
 # Publish
-ret= client1.publish("topico/ejemplo","Hola")                   
+pot = mraa.Aio(0) 
+
+while 1:
+	potVal = float(pot.read())
+	ret= client1.publish("topico/ejemplo",str(pot))                   
