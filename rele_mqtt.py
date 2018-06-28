@@ -9,10 +9,14 @@ gpio_1 = mraa.Gpio(2)
 gpio_1.dir(mraa.DIR_OUT)
 
 def on_message_print(client, userdata, message):
+	variable = message.topic;
     print("%s %s" % (message.topic, message.payload))
-    if message.topic == "ON":
-    	gpio_1.write(1)
-    elif message.topic == "OFF":
-    	gpio_1.write(0)
+
+if variable == "ON":
+	gpio_1.write(1)
+	print("Hola")
+elif variable == "OFF":
+	gpio_1.write(0)
+	print("Adios")
 
 subscribe.callback(on_message_print, "topico/ejemplo", hostname="192.168.1.108")
