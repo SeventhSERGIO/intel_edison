@@ -7,7 +7,7 @@ def on_message(client, userdata, message):
     print("message qos=",message.qos)
     print("message retain flag=",message.retain)
 ########################################
-while True
+while 1
 	broker_address="192.168.1.130"
 	#broker_address="iot.eclipse.org"
 	print("creating new instance")
