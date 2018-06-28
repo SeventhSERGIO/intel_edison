@@ -11,7 +11,7 @@ client1.subscribe("topico/relay_1",0)
 # Publish
 pot = mraa.Aio(0) 
 
-client.loop_start()
+client1.loop_start()
 
 while 1:
 	potVal = float(pot.read())
