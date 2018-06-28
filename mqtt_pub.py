@@ -3,11 +3,20 @@ import mraa
 import sys
 import time
 
+# initialise gpio 2
+gpio_1 = mraa.Gpio(2)
+# set gpio 2 to output
+gpio_1.dir(mraa.DIR_OUT)
+
 def on_subscribe(client1, userdata, mid, granted_qos):
     print("Subscribed: "+str(mid)+" "+str(granted_qos))
 
 def on_message(client1, userdata, msg):
-    print(msg.topic+" "+str(msg.qos)+" "+str(msg.payload))    
+    print(msg.topic+" "+str(msg.qos)+" "+str(msg.payload))
+    if str(msg.payload) == "ON":
+	   gpio_1.write(1)
+    elif str(msg.payload) == "OFF":
+	   gpio_1.write(0)    
 
 
 broker="192.168.1.108"
