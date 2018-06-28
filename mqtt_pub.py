@@ -8,6 +8,9 @@ gpio_1 = mraa.Gpio(2)
 # set gpio 2 to output
 gpio_1.dir(mraa.DIR_OUT)
 
+EdisonLCD = lcd.Jhd1313m1(0, 0x3E, 0x62)
+EdisonLCD.setColor(0, 255, 0)
+
 def on_subscribe(client1, userdata, mid, granted_qos):
     print("Subscribed: "+str(mid)+" "+str(granted_qos))
 
@@ -17,6 +20,9 @@ def on_message(client1, userdata, msg):
 	   gpio_1.write(1)
     elif str(msg.payload) == "OFF":
 	   gpio_1.write(0)    
+	EdisonLCD.clear()
+    EdisonLCD.setCursor(0,0)
+    EdisonLCD.write(msg.payload)
 
 
 broker="192.168.1.108"
