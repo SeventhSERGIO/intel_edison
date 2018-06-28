@@ -17,14 +17,13 @@ def on_subscribe(client1, userdata, mid, granted_qos):
 
 def on_message(client1, userdata, msg):
     print(msg.topic+" "+str(msg.qos)+" "+str(msg.payload))
+    EdisonLCD.clear()
+    EdisonLCD.setCursor(0,0)
+    EdisonLCD.write(msg.payload)
     if str(msg.payload) == "ON":
 	   gpio_1.write(1)
     elif str(msg.payload) == "OFF":
 	   gpio_1.write(0)    
-	
-	EdisonLCD.clear()
-    EdisonLCD.setCursor(0,0)
-    EdisonLCD.write(msg.payload)
 
 
 broker="192.168.1.108"
