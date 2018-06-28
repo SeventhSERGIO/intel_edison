@@ -6,7 +6,7 @@ def on_publish(client,userdata,result):
         print("data published \n")
 pass
 # Create client object
-client1= paho.Client("Raspberry_EEG")                           
+client1= paho.Client("Edison_Adrian")                           
 # Assign function to callback
 client1.on_publish = on_publish 
 # Establish connection                        
