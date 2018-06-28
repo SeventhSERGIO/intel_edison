@@ -12,7 +12,7 @@ port=1883
 # Create client object
 client1= paho.Client("Edison_Adrian")                           
 # Assign function to callback
-client1.on_publish = on_publish 
+#client1.on_publish = on_publish 
 # Establish connection                        
 client1.connect(broker,port)                                 
 # Publish
