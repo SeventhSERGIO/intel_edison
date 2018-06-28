@@ -17,6 +17,7 @@ client.connect(broker_address) #connect to broker
 client.loop_start() #start the loop
 print("Subscribing to topic","topico/ejemplo")
 client.subscribe("topico/ejemplo")
+client.loop_forever()
 #print("Publishing message to topic","house/bulbs/bulb1")
 #client.publish("house/bulbs/bulb1","OFF")
 #time.sleep(4) # wait
