@@ -20,4 +20,4 @@ pot = mraa.Aio(0)
 
 while 1:
 	potVal = float(pot.read())
-	ret= client1.publish("topico/ejemplo_1",str(pot))                   
+	ret= client1.publish("topico/ejemplo_1",str(potVal))                   
