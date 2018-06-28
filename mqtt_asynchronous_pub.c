@@ -71,7 +71,6 @@ int main(int argc, char* argv[])
     // connlost A pointer to an MQTTClient_connectionLost() callback function
     // msgarrvd A pointer to an MQTTClient_messageArrived() callback function
     // delivered A pointer to an MQTTClient_deliveryComplete() callback function
-while (1) {
     MQTTClient_setCallbacks(client, NULL, connlost, msgarrvd, delivered);
     //
     if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
@@ -88,9 +87,8 @@ while (1) {
       printf("Waiting for publication of %s\n"
               "on topic %s for client with ClientID: %s\n",
               PAYLOAD, TOPIC, CLIENTID);
-      while(deliveredtoken != token);
-}
-    //MQTTClient_disconnect(client, 10000);
-    //MQTTClient_destroy(&client);
+    while(deliveredtoken != token);
+    MQTTClient_disconnect(client, 10000);
+    MQTTClient_destroy(&client);
     return rc;
 }
