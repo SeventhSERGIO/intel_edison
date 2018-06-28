@@ -9,7 +9,7 @@
 #define AIO_PORT 0
 #define LEN 20
 //  Macros
-#define ADDRESS     "192.168.1.92"
+#define ADDRESS     "192.168.1.108"
 #define CLIENTID    "Edison_Adrian"
 #define TOPIC       "topico/ejemplo"
 #define PAYLOAD     "Que onda!"
