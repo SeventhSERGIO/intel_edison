@@ -15,4 +15,4 @@ def on_message_print(client, userdata, message):
     elif message.topic == "OFF":
     	gpio_1.write(0)
 
-subscribe.callback(on_message_print, "topico/ejemplo", hostname="192.168.1.130")
+subscribe.callback(on_message_print, "topico/ejemplo", hostname="192.168.1.108")
