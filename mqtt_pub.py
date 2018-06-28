@@ -1,4 +1,5 @@
 import paho.mqtt.client as paho
+import pyupm_i2clcd as lcd
 import mraa
 import sys
 import time
