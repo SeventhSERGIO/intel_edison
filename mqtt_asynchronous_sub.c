@@ -3,7 +3,7 @@
 #include <string.h>
 #include "MQTTClient.h"
 #define ADDRESS     "192.168.1.130"
-#define CLIENTID    "Edison_Adrian"
+#define CLIENTID    "Edison_Adrian_sub"
 #define TOPIC       "topico/ejemplo"
 #define PAYLOAD     "Hello World!"
 #define QOS         1

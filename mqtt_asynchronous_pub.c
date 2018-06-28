@@ -5,7 +5,7 @@
 #define LEN 20
 //  Macros
 #define ADDRESS     "192.168.1.130"
-#define CLIENTID    "Edison_Adrian"
+#define CLIENTID    "Edison_Adrian_pub"
 #define TOPIC       "topico/ejemplo"
 #define PAYLOAD     "Que onda!"
 #define QOS         1
