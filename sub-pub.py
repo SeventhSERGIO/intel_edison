@@ -17,8 +17,8 @@ def on_message_print(client, userdata, message):
     elif message.payload == "OFF":
 	   gpio_1.write(0)
 
-subscribe.callback(on_message_print, "topico/ejemplo_1", hostname="192.168.1.108")
+subscribe.callback(on_message_print, "topico/relay_1", hostname="192.168.1.108")
 
 while 1:
     potVal = float(pot.read())
-    publish.single("topico/relay_1", str(potVal), hostname="192.168.1.108")
+    publish.single("topico/ejemplo_1", str(potVal), hostname="192.168.1.108")
