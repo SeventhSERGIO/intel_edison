@@ -21,4 +21,5 @@ subscribe.callback(on_message_print, "topico/relay_1", hostname="192.168.1.108")
 
 while 1:
     potVal = float(pot.read())
+    print(potVal)
     publish.single("topico/ejemplo_1", str(potVal), hostname="192.168.1.108")
